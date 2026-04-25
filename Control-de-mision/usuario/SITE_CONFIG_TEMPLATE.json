@@ -1,0 +1,364 @@
+{
+  "_meta": {
+    "_note": "SOLO REFERENCIA DE FORMATO — Ver ia/config-schema.md. La IA genera site.config.json desde CERO para cada proyecto usando el contexto del cliente. NUNCA copiar este archivo.",
+    "_purpose": "Este archivo muestra el formato y las posibilidades del config. El archivo real se llama site.config.json y estará en la raíz del proyecto.",
+    "version": "2.0.0",
+    "client": "Ejemplo ficticio — Clínica Dental Premium",
+    "project": "Landing page captación de pacientes vía formulario"
+  },
+  "brand": {
+    "name": "DentPlus",
+    "logo": {
+      "src": "/images/logo.svg",
+      "alt": "DentPlus logo",
+      "width": 130,
+      "height": 44
+    },
+    "favicon": "/favicon.ico"
+  },
+  "colors": {
+    "_guide": {
+      "_uso": "Cambia el valor hex del token que quieras. Guarda el archivo y usa el prompt 'Actualizar desde Config' para que el cambio se aplique al código.",
+      "primary": "Color de marca — botones CTA principales, links activos, bordes destacados",
+      "primaryDark": "Versión oscura del primario — hover de botones, estados activos (se calcula automático si no se define)",
+      "accent": "Color de detalle — badges, chips, íconos decorativos, elementos de llamada de atención",
+      "bgPrimary": "Fondo principal de la página — la mayoría de secciones usa este fondo",
+      "bgSecondary": "Fondo alternado — secciones intercaladas para crear ritmo visual (beneficios, testimonios, etc.)",
+      "textPrimary": "Texto principal — títulos, párrafos importantes",
+      "textSecondary": "Texto secundario — subtítulos, labels, descripciones de apoyo"
+    },
+    "primary": "#0ea5e9",
+    "primaryDark": "#0369a1",
+    "accent": "#f59e0b",
+    "bgPrimary": "#ffffff",
+    "bgSecondary": "#f0f9ff",
+    "textPrimary": "#0f172a",
+    "textSecondary": "#64748b"
+  },
+  "fonts": {
+    "_guide": "Nombres exactos de Google Fonts. Cambia el nombre y usa el prompt 'Actualizar desde Config'.",
+    "heading": "Plus Jakarta Sans",
+    "body": "Inter"
+  },
+  "seo": {
+    "_guide": "Title y description son los que aparecen en Google. Manténlos dentro del límite de caracteres indicado.",
+    "title": "DentPlus — Sonríe con confianza en Santiago",
+    "title_max": "60 caracteres",
+    "description": "Clínica dental de alta calidad en Providencia. Ortodoncia, implantes y blanqueamiento. Primera consulta gratis.",
+    "description_max": "155 caracteres",
+    "ogTitle": "DentPlus — Tu clínica dental en Santiago",
+    "ogDescription": "Tratamientos dentales personalizados. Primera consulta gratis. Agenda hoy.",
+    "ogImage": "/images/og-image.jpg",
+    "canonicalUrl": "https://dentplus.cl",
+    "locale": "es_CL"
+  },
+  "contact": {
+    "_guide": "El número de WhatsApp debe incluir código de país sin el + (ej: 56912345678 para Chile).",
+    "whatsapp": {
+      "number": "56912345678",
+      "message": "Hola, me interesa agendar una consulta en DentPlus.",
+      "label": "Agendar por WhatsApp"
+    },
+    "email": "contacto@dentplus.cl"
+  },
+  "analytics": {
+    "_guide": "Incluir solo si tienes los IDs. Eliminar este bloque si no hay analytics.",
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "facebookPixelId": "1234567890"
+  },
+  "animations": {
+    "_guide": "1 = solo hovers. 2 = scroll reveals con Framer Motion. 3 = efectos premium con GSAP.",
+    "level": 2
+  },
+  "sections": [
+    {
+      "_note": "NAVBAR — Menú superior. Edita los links y el texto del botón de acción.",
+      "id": "navbar",
+      "type": "navbar",
+      "links": [
+        {
+          "text": "Tratamientos",
+          "href": "#tratamientos"
+        },
+        {
+          "text": "Proceso",
+          "href": "#proceso"
+        },
+        {
+          "text": "Testimonios",
+          "href": "#testimonios"
+        },
+        {
+          "text": "Preguntas",
+          "href": "#faq"
+        }
+      ],
+      "cta": {
+        "text": "Primera consulta gratis",
+        "href": "#agendar"
+      }
+    },
+    {
+      "_note": "HERO — Primera sección. headline es el título principal (H1). Edita badge, ctas y la imagen.",
+      "id": "hero",
+      "type": "hero",
+      "badge": "🦷 Primera consulta sin costo",
+      "headline": "Una sonrisa que te cambia la vida, al alcance de tu mano",
+      "subheadline": "Clínica dental en Providencia con tecnología digital. Ortodoncia, implantes y estética dental con resultados reales.",
+      "ctas": [
+        {
+          "text": "Agendar consulta gratis",
+          "href": "#agendar",
+          "variant": "primary"
+        },
+        {
+          "text": "Ver tratamientos",
+          "href": "#tratamientos",
+          "variant": "secondary"
+        }
+      ],
+      "media": {
+        "_note": "type puede ser 'image', 'video' o 'none'. src es la ruta desde /public/.",
+        "type": "image",
+        "src": "/images/hero--clinica.jpg",
+        "alt": "Clínica DentPlus Providencia"
+      }
+    },
+    {
+      "_note": "STATS — Barra de números/logros. Agrega o quita items según los datos reales del cliente.",
+      "id": "numeros",
+      "type": "stats",
+      "items": [
+        {
+          "value": "8.000+",
+          "label": "Pacientes tratados",
+          "icon": "users"
+        },
+        {
+          "value": "15",
+          "label": "Años de experiencia",
+          "icon": "clock"
+        },
+        {
+          "value": "98%",
+          "label": "Pacientes satisfechos",
+          "icon": "star"
+        },
+        {
+          "value": "12",
+          "label": "Especialistas",
+          "icon": "heart-pulse"
+        }
+      ]
+    },
+    {
+      "_note": "BENEFITS GRID — Grilla de servicios o beneficios. columns controla cuántas columnas en desktop.",
+      "id": "tratamientos",
+      "type": "benefits-grid",
+      "sectionLabel": "Tratamientos",
+      "headline": "Todo lo que necesitas en un solo lugar",
+      "columns": 3,
+      "items": [
+        {
+          "icon": "star",
+          "title": "Ortodoncia invisible",
+          "body": "Alineadores transparentes que enderezan tus dientes sin brackets visibles."
+        },
+        {
+          "icon": "zap",
+          "title": "Blanqueamiento LED",
+          "body": "Resultados visibles desde la primera sesión. Hasta 8 tonos más blanco."
+        },
+        {
+          "icon": "shield",
+          "title": "Implantes dentales",
+          "body": "Solución permanente para dientes perdidos con materiales de titanio certificados."
+        },
+        {
+          "icon": "heart-pulse",
+          "title": "Limpieza profunda",
+          "body": "Higiene dental profesional con ultrasonido. Recomendada cada 6 meses."
+        },
+        {
+          "icon": "check-circle",
+          "title": "Odontopediatría",
+          "body": "Atención especializada para niños en un ambiente tranquilo y amigable."
+        },
+        {
+          "icon": "trophy",
+          "title": "Estética dental",
+          "body": "Carillas, diseño de sonrisa y procedimientos cosméticos de alto impacto."
+        }
+      ]
+    },
+    {
+      "_note": "TIPO CUSTOM — La IA puede inventar tipos nuevos si el proyecto lo requiere. before-after es un ejemplo.",
+      "id": "antes-despues",
+      "type": "before-after",
+      "sectionLabel": "Resultados",
+      "headline": "Resultados reales de pacientes reales",
+      "subheadline": "Cada caso es único. Estos son algunos de nuestros tratamientos completados.",
+      "cases": [
+        {
+          "treatment": "Ortodoncia invisible — 14 meses",
+          "before": {
+            "src": "/images/cases--1-before.jpg",
+            "alt": "Antes ortodoncia"
+          },
+          "after": {
+            "src": "/images/cases--1-after.jpg",
+            "alt": "Después ortodoncia"
+          }
+        }
+      ]
+    },
+    {
+      "_note": "STEPS — Pasos del proceso. style puede ser 'numbered', 'timeline' o 'horizontal'.",
+      "id": "proceso",
+      "type": "steps",
+      "sectionLabel": "Cómo funciona",
+      "headline": "Tu primera visita, sin complicaciones",
+      "style": "numbered",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Agenda tu hora",
+          "body": "Llena el formulario o escríbenos por WhatsApp. Te confirmamos en menos de 2 horas."
+        },
+        {
+          "number": "02",
+          "title": "Diagnóstico digital",
+          "body": "Radiografía digital y evaluación completa. Sin costo en tu primera visita."
+        },
+        {
+          "number": "03",
+          "title": "Plan personalizado",
+          "body": "Te presentamos opciones de tratamiento con precios claros y sin letra chica."
+        },
+        {
+          "number": "04",
+          "title": "Empieza a sonreír",
+          "body": "Iniciamos el tratamiento a tu ritmo, con seguimiento constante."
+        }
+      ]
+    },
+    {
+      "_note": "TESTIMONIALS — Lo que dicen los clientes. style puede ser 'carousel', 'grid' o 'masonry'. avatar es opcional.",
+      "id": "testimonios",
+      "type": "testimonials",
+      "sectionLabel": "Testimonios",
+      "headline": "Lo que dicen nuestros pacientes",
+      "style": "carousel",
+      "items": [
+        {
+          "quote": "La ortodoncia invisible cambió mi vida. El equipo es increíblemente profesional y el resultado superó mis expectativas.",
+          "author": "Valentina R.",
+          "role": "Paciente — Ortodoncia invisible",
+          "avatar": "/images/testimonial--1.jpg",
+          "rating": 5
+        },
+        {
+          "quote": "Primera consulta gratis de verdad. Me explicaron todo sin presionarme y el precio fue justo.",
+          "author": "Martín G.",
+          "role": "Paciente — Implante dental",
+          "avatar": "/images/testimonial--2.jpg",
+          "rating": 5
+        }
+      ]
+    },
+    {
+      "_note": "FAQ — Preguntas frecuentes. schema:true genera JSON-LD para SEO. Agrega o quita items según preguntas reales.",
+      "id": "faq",
+      "type": "faq",
+      "sectionLabel": "Preguntas frecuentes",
+      "headline": "Resuelve tus dudas antes de venir",
+      "schema": true,
+      "items": [
+        {
+          "question": "¿La primera consulta es realmente gratis?",
+          "answer": "Sí. La evaluación inicial incluye revisión clínica y diagnóstico digital sin costo. Solo pagas si decides iniciar un tratamiento."
+        },
+        {
+          "question": "¿Tienen convenio con ISAPRE o Fonasa?",
+          "answer": "Trabajamos con las principales ISAPRES y aceptamos reembolso Fonasa Libre Elección."
+        },
+        {
+          "question": "¿Cuánto demora un tratamiento de ortodoncia?",
+          "answer": "Depende del caso. Los alineadores invisibles van de 6 a 18 meses. Durante tu diagnóstico gratuito te daremos un estimado exacto."
+        },
+        {
+          "question": "¿Puedo pagar en cuotas?",
+          "answer": "Sí. Aceptamos todas las tarjetas de crédito hasta en 12 cuotas sin interés."
+        }
+      ]
+    },
+    {
+      "_note": "CONTACT FORM — Formulario. fields define los campos: text, email, tel, select, textarea, checkbox, date.",
+      "id": "agendar",
+      "type": "contact-form",
+      "sectionLabel": "Agenda tu hora",
+      "headline": "Primera consulta gratis — sin compromiso",
+      "subheadline": "Completa el formulario y te contactamos en menos de 2 horas hábiles.",
+      "destinationEmail": "contacto@dentplus.cl",
+      "fields": [
+        {
+          "id": "nombre",
+          "type": "text",
+          "label": "Tu nombre",
+          "required": true
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "id": "telefono",
+          "type": "tel",
+          "label": "Teléfono",
+          "required": true
+        },
+        {
+          "id": "tratamiento",
+          "type": "select",
+          "label": "¿Qué tratamiento te interesa?",
+          "required": false,
+          "options": [
+            "Ortodoncia invisible",
+            "Blanqueamiento",
+            "Implantes",
+            "Limpieza",
+            "No sé, quiero orientación"
+          ]
+        },
+        {
+          "id": "mensaje",
+          "type": "textarea",
+          "label": "¿Algo más que quieras contarnos?",
+          "required": false
+        }
+      ],
+      "submitLabel": "Quiero mi consulta gratis",
+      "successMessage": "¡Listo! Te contactaremos pronto para confirmar tu hora.",
+      "errorMessage": "Hubo un problema. Escríbenos por WhatsApp y te ayudamos de inmediato.",
+      "successAction": "message"
+    },
+    {
+      "_note": "FOOTER — Pie de página. Incluir solo las redes sociales activas del cliente.",
+      "id": "footer",
+      "type": "footer",
+      "tagline": "Tu sonrisa, nuestra especialidad.",
+      "links": [
+        {
+          "text": "Política de Privacidad",
+          "href": "/privacidad"
+        }
+      ],
+      "social": {
+        "instagram": "https://instagram.com/dentplus_cl",
+        "facebook": "https://facebook.com/dentplus.cl"
+      }
+    }
+  ]
+}

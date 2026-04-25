@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Brand Colors from site.config.json */
+  --color-primary: #004a45;
+  --color-accent: #004a45;
+  --color-bg-primary: #FDF7F0;
+  --color-bg-secondary: #ffffff;
+  --color-text-primary: #333333;
+  --color-text-secondary: #004a45;
+
+  /* Layout — contenedor de contenido. NUNCA CAMBIAR */
+  --max-w-content: 75rem; /* 1200px */
+
+  /* Tipografía fluida */
+  --font-size-hero: clamp(2.25rem, 5vw, 4.5rem);
+  --font-size-display: clamp(1.875rem, 3.5vw, 3rem);
+
+  /* Shadcn overrides/mappings */
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--bg-secondary);
+  --color-card-foreground: var(--text-primary);
+  --color-popover: var(--bg-secondary);
+  --color-popover-foreground: var(--text-primary);
+  --color-muted: color-mix(in srgb, var(--bg-primary), black 5%);
+  --color-muted-foreground: var(--text-primary);
+  --color-border: color-mix(in srgb, var(--primary), transparent 85%);
+  --color-input: color-mix(in srgb, var(--primary), transparent 90%);
+  --color-ring: var(--primary);
+}
+
+:root {
+  --background: #FDF7F0;
+  --foreground: #333333;
+  --primary: #004a45;
+  --primary-foreground: #ffffff;
+  --accent: #004a45;
+  --accent-foreground: #ffffff;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-bg-primary text-text-primary;
+  }
+  input, textarea, select {
+    font-size: max(16px, 1rem);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-2xl;
+  }
+  .mask-radial {
+    mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
+  }
+  .mask-gradient-to-l {
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  }
+  .mask-gradient-to-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}

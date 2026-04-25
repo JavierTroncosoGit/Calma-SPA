@@ -1,0 +1,211 @@
+{
+  "_meta": {
+    "project": "Calma SPA",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-24T14:20:00-04:00"
+  },
+  "brand": {
+    "name": "Calma SPA",
+    "logo": {
+      "src": "/assets/logo.svg",
+      "alt": "Calma SPA Logo"
+    }
+  },
+  "colors": {
+    "primary": "#004a45",
+    "secondary": "#ffffff",
+    "accent": "#004a45",
+    "bgPrimary": "#FDF7F0",
+    "bgSecondary": "#ffffff",
+    "textPrimary": "#333333",
+    "textSecondary": "#004a45",
+    "_guide": {
+      "_uso": "Cambia el hex del token. Guarda y usa el prompt 'Actualizar desde Config'.",
+      "primary": "Títulos principales, Botones primarios, Navbar bg",
+      "accent": "Badges, Iconos destacados, CTAs secundarios",
+      "bgPrimary": "Fondo suave principal (Arena/Crema)",
+      "bgSecondary": "Fondo blanco para contraste",
+      "textPrimary": "Texto de cuerpo y lectura",
+      "textSecondary": "Títulos de sección y énfasis"
+    }
+  },
+  "fonts": {
+    "titles": "Outfit",
+    "body": "DM Sans"
+  },
+  "seo": {
+    "title": "Calma SPA | Arriendo de Jacuzzis Inflables Premium en RM",
+    "description": "Vive la experiencia de un SPA en casa. Jacuzzis inflables con tecnología de ozono, agua a 40°C e instalación en 60 minutos en la Región Metropolitana.",
+    "keywords": ["arriendo jacuzzi", "spa a domicilio", "jacuzzi inflable", "relajación rm", "calma spa"],
+    "canonicalUrl": "https://calmaspa.cl"
+  },
+  "contact": {
+    "whatsapp": {
+      "number": "56967014233",
+      "message": "Hola! Me gustaría cotizar un arriendo de spa/jacuzzi para la fecha "
+    },
+    "social": {
+      "instagram": "https://www.instagram.com/calma_spa.cl/"
+    }
+  },
+  "animations": {
+    "level": 3
+  },
+  "sections": [
+    {
+      "id": "navbar",
+      "type": "navbar",
+      "_note": "Barra de navegación con logo y link directo a WhatsApp.",
+      "links": [
+        { "text": "Beneficios", "href": "#beneficios" },
+        { "text": "Cómo funciona", "href": "#como-funciona" },
+        { "text": "Preguntas", "href": "#faq" }
+      ],
+      "cta": { "text": "Cotizar ahora", "href": "https://wa.me/56967014233" }
+    },
+    {
+      "id": "hero",
+      "type": "hero",
+      "_note": "HERO — Propuesta de valor principal con fondo premium.",
+      "headline": "Arriendo de Jacuzzis Premium: El lujo de un SPA en tu casa.",
+      "subheadline": "Disfruta de instalación express en 60 minutos, higiene clínica certificada y agua a 40°C en toda la Región Metropolitana.",
+      "ctas": [
+        { "text": "Agendar mi experiencia", "href": "https://wa.me/56967014233", "variant": "primary" }
+      ],
+      "media": {
+        "type": "image",
+        "src": "/assets/fondo-hero.png"
+      }
+    },
+    {
+      "id": "contacto",
+      "type": "contact-form",
+      "_note": "CONTACTO — Captación de leads con validación.",
+      "headline": "Solicita tu SPA hoy",
+      "subheadline": "Déjanos tus datos y te contactaremos para confirmar disponibilidad en menos de 24 horas.",
+      "fields": [
+        { "id": "nombre", "type": "text", "label": "Nombre Completo", "placeholder": "Ej: Juan Pérez", "required": true },
+        { "id": "email", "type": "email", "label": "Email", "placeholder": "juan@ejemplo.com", "required": true },
+        { "id": "telefono", "type": "tel", "label": "Teléfono", "placeholder": "+56 9 ...", "required": true },
+        { "id": "fecha", "type": "text", "label": "Fecha deseada", "placeholder": "Ej: Próximo fin de semana", "required": false },
+        { "id": "mensaje", "type": "textarea", "label": "Dudas o comentarios", "placeholder": "Cuéntanos sobre tu evento (cumpleaños, aniversario...)", "required": false }
+      ],
+      "submitLabel": "Solicitar mi SPA hoy",
+      "successMessage": "¡Recibido! Nos pondremos en contacto contigo muy pronto.",
+      "errorMessage": "Hubo un error. Por favor intenta por WhatsApp.",
+      "destinationEmail": "hola@calmaspa.cl"
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "_note": "Barra de números rápidos para generar confianza inmediata.",
+      "items": [
+        { "text": "Entran 6 personas cómodamente", "icon": "users" },
+        { "text": "Solo 60 minutos de instalación", "icon": "zap" },
+        { "text": "Llegamos a toda la Región Metropolitana", "icon": "map-pin" }
+      ]
+    },
+    {
+      "id": "beneficios",
+      "type": "benefits-grid",
+      "_note": "BENEFICIOS — Derribando las 3 objeciones principales: Higiene, Clima y Costo.",
+      "sectionLabel": "Bienestar sin preocupaciones",
+      "headline": "Diseñado para tu tranquilidad",
+      "items": [
+        {
+          "icon": "shield-check",
+          "title": "Higiene Certificada",
+          "body": "Tecnología UVC + Ozono que elimina el 99.9% de bacterias sin químicos agresivos."
+        },
+        {
+          "icon": "sun",
+          "title": "Uso Todo el Año",
+          "body": "Agua a 40°C perfecta para noches frías o relajo bajo el sol."
+        },
+        {
+          "icon": "banknote",
+          "title": "Bajo Costo",
+          "body": "Eficiencia real: el consumo de agua solo sube entre $2.000 y $3.000 por ciclo."
+        }
+      ]
+    },
+    {
+      "id": "como-funciona",
+      "type": "steps",
+      "_note": "PASOS — El proceso llave en mano explicado simple.",
+      "sectionLabel": "Tu SPA listo en 3 pasos",
+      "headline": "Nosotros nos encargamos de todo",
+      "style": "numbered",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Eliges tu fecha",
+          "body": "Contáctanos y coordinamos la entrega en tu domicilio."
+        },
+        {
+          "number": "02",
+          "title": "Instalación express",
+          "body": "En 60 minutos dejamos el jacuzzi armado, lleno y listo para calentar."
+        },
+        {
+          "number": "03",
+          "title": "Calma Total",
+          "body": "Súmate al relajo y disfruta de burbujas a la temperatura ideal."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "_note": "FAQ — Resolviendo dudas sobre instalación, clima y manejo.",
+      "headline": "Preguntas Frecuentes",
+      "schema": true,
+      "items": [
+        {
+          "question": "¿Es difícil mantenerlo?",
+          "answer": "No, nosotros hacemos todo el trabajo pesado. Tú solo controlas las burbujas desde el panel digital o tu celular."
+        },
+        {
+          "question": "¿Cuándo lo instalan?",
+          "answer": "Lo instalamos el día previo para asegurar que el agua esté a la temperatura ideal cuando quieras usarlo."
+        },
+        {
+          "question": "¿Cuánta agua utiliza?",
+          "answer": "Utiliza aproximadamente 930 litros. No te preocupes, el impacto en tu cuenta es mínimo ($2.000 a $3.000)."
+        }
+      ]
+    },
+    {
+      "id": "social-proof",
+      "type": "instagram-feed",
+      "_note": "PRUEBA SOCIAL — Posts de Instagram incrustados para generar confianza.",
+      "headline": "Experiencias reales",
+      "subheadline": "Únete a las cientos de familias que ya vivieron la experiencia Calma SPA.",
+      "posts": [
+        "DPepr4AkZai",
+        "DUojWP0EZ3f",
+        "DWn3F-tDshF"
+      ]
+    },
+    {
+      "id": "cta-final",
+      "type": "cta-banner",
+      "_note": "CTA FINAL — Último empujón para convertir.",
+      "headline": "¿Listo para desconectarte?",
+      "subheadline": "Traslado gratuito en toda la RM e instalación el día previo incluida.",
+      "ctas": [
+        { "text": "Consultar Disponibilidad", "href": "https://wa.me/56967014233", "variant": "primary" }
+      ],
+      "style": "gradient"
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "_note": "FOOTER — Info de contacto y redes.",
+      "tagline": "Calma SPA: Llevamos el bienestar a tu puerta.",
+      "social": {
+        "instagram": "https://www.instagram.com/calma_spa.cl/"
+      }
+    }
+  ]
+}

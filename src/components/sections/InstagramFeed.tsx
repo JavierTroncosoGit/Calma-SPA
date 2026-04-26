@@ -4,9 +4,46 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { siteConfig } from "@/lib/config"
 
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds: {
+        process: () => void
+      }
+    }
+  }
+}
+
 export function InstagramFeed() {
   const data = siteConfig.sections.find((s) => s.type === "instagram-feed")
   if (!data) return null
+
+  const mediaType = data.mediaType || "reel"
+  const baseUrl =
+    mediaType === "reel"
+      ? "https://www.instagram.com/reel"
+      : "https://www.instagram.com/p"
+
+  // Process Instagram embeds once the script is loaded
+  React.useEffect(() => {
+    const processEmbeds = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process()
+      }
+    }
+
+    // The script might already be loaded
+    processEmbeds()
+
+    // Also wait a bit in case the script loads after mount (lazyOnload)
+    const timer = setTimeout(processEmbeds, 2000)
+    const timer2 = setTimeout(processEmbeds, 4000)
+
+    return () => {
+      clearTimeout(timer)
+      clearTimeout(timer2)
+    }
+  }, [])
 
   return (
     <section id={data.id} className="py-12 lg:py-20 bg-bg-secondary border-t border-border/50">
@@ -25,24 +62,38 @@ export function InstagramFeed() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {data.posts.map((postId: string, idx: number) => (
             <motion.div
-              key={idx}
+              key={postId}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-bg-primary rounded-3xl overflow-hidden shadow-lg h-[500px] relative flex items-center justify-center border border-border"
+              className="flex items-center justify-center"
             >
-              <iframe
-                src={`https://www.instagram.com/p/${postId}/embed`}
-                width="100%"
-                height="100%"
-                loading="lazy"
-                scrolling="no"
-                allowTransparency={true}
-                allow="encrypted-media; picture-in-picture"
-                className="absolute inset-0 w-full h-full border-none"
-                title={`Instagram Post ${postId}`}
-              />
+              <blockquote
+                className="instagram-media"
+                data-instgrm-permalink={`${baseUrl}/${postId}/`}
+                data-instgrm-version="14"
+                style={{
+                  background: "#FFF",
+                  border: "0",
+                  borderRadius: "12px",
+                  boxShadow: "none",
+                  margin: "0",
+                  maxWidth: "540px",
+                  minWidth: "280px",
+                  padding: "0",
+                  width: "100%",
+                }}
+              >
+                <a
+                  href={`${baseUrl}/${postId}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-primary/60 text-sm hover:text-text-primary transition-colors"
+                >
+                  Ver en Instagram
+                </a>
+              </blockquote>
             </motion.div>
           ))}
         </div>

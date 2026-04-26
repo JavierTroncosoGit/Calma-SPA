@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Outfit, DM_Sans } from "next/font/google"
+import Script from "next/script"
 import { siteConfig } from "@/lib/config"
 import { SmoothScroll } from "@/components/layout/SmoothScroll"
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton"
@@ -96,6 +97,10 @@ export default function RootLayout({
           {children}
           <WhatsAppButton />
         </SmoothScroll>
+        <Script
+          src="https://platform.instagram.com/en_US/embeds.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )

@@ -15,9 +15,9 @@
     "primary": "#004a45",
     "secondary": "#ffffff",
     "accent": "#004a45",
-    "bgPrimary": "#FDF7F0",
+    "bgPrimary": "#ffffff",
     "bgSecondary": "#ffffff",
-    "textPrimary": "#333333",
+    "textPrimary": "#004a45",
     "textSecondary": "#004a45",
     "_guide": {
       "_uso": "Cambia el hex del token. Guarda y usa el prompt 'Actualizar desde Config'.",
@@ -78,79 +78,55 @@
       }
     },
     {
-      "id": "contacto",
-      "type": "contact-form",
-      "_note": "CONTACTO — Captación de leads con validación.",
-      "headline": "Solicita tu SPA hoy",
-      "subheadline": "Déjanos tus datos y te contactaremos para confirmar disponibilidad en menos de 24 horas.",
-      "fields": [
-        { "id": "nombre", "type": "text", "label": "Nombre Completo", "placeholder": "Ej: Juan Pérez", "required": true },
-        { "id": "email", "type": "email", "label": "Email", "placeholder": "juan@ejemplo.com", "required": true },
-        { "id": "telefono", "type": "tel", "label": "Teléfono", "placeholder": "+56 9 ...", "required": true },
-        { "id": "fecha", "type": "text", "label": "Fecha deseada", "placeholder": "Ej: Próximo fin de semana", "required": false },
-        { "id": "mensaje", "type": "textarea", "label": "Dudas o comentarios", "placeholder": "Cuéntanos sobre tu evento (cumpleaños, aniversario...)", "required": false }
-      ],
-      "submitLabel": "Solicitar mi SPA hoy",
-      "successMessage": "¡Recibido! Nos pondremos en contacto contigo muy pronto.",
-      "errorMessage": "Hubo un error. Por favor intenta por WhatsApp.",
-      "destinationEmail": "hola@calmaspa.cl"
-    },
-    {
-      "id": "stats",
-      "type": "stats",
-      "_note": "Barra de números rápidos para generar confianza inmediata.",
-      "items": [
-        { "text": "Entran 6 personas cómodamente", "icon": "users" },
-        { "text": "Solo 60 minutos de instalación", "icon": "zap" },
-        { "text": "Llegamos a toda la Región Metropolitana", "icon": "map-pin" }
-      ]
-    },
-    {
-      "id": "beneficios",
-      "type": "benefits-grid",
-      "_note": "BENEFICIOS — Derribando las 3 objeciones principales: Higiene, Clima y Costo.",
-      "sectionLabel": "Bienestar sin preocupaciones",
-      "headline": "Diseñado para tu tranquilidad",
-      "items": [
+      "id": "como-funciona",
+      "type": "steps",
+      "_note": "PASOS — El proceso llave en mano explicado simple.",
+      "sectionLabel": "Experiencia Llave en Mano",
+      "headline": "Un proceso sin fricciones, como el agua.",
+      "subheadline": "Tú solo eliges el momento; nosotros orquestamos la calma.",
+      "steps": [
         {
-          "icon": "shield-check",
-          "title": "Higiene Certificada",
-          "body": "Tecnología UVC + Ozono que elimina el 99.9% de bacterias sin químicos agresivos."
+          "number": "01",
+          "title": "Reserva tu Instante.",
+          "body": "Selecciona el momento perfecto. Nuestro equipo se encarga de la logística y el traslado con total discreción, puntualidad y cero complicaciones para ti."
         },
         {
-          "icon": "sun",
-          "title": "Uso Todo el Año",
-          "body": "Agua a 40°C perfecta para noches frías o relajo bajo el sol."
+          "number": "02",
+          "title": "Despliegue Silencioso.",
+          "body": "En solo 60 minutos, transformamos tu ambiente. Realizamos el montaje experto, el llenado purificado y la calibración térmica sin interrumpir la paz de tu hogar."
         },
         {
-          "icon": "banknote",
-          "title": "Bajo Costo",
-          "body": "Eficiencia real: el consumo de agua solo sube entre $2.000 y $3.000 por ciclo."
+          "number": "03",
+          "title": "Inmersión Absoluta.",
+          "body": "El agua ha alcanzado sus 40°C perfectos. Entrégate a la calidez, deja que el sistema de burbujas disuelva la tensión y disfruta de tu nuevo santuario."
         }
       ]
     },
     {
-      "id": "como-funciona",
-      "type": "steps",
-      "_note": "PASOS — El proceso llave en mano explicado simple.",
-      "sectionLabel": "Tu SPA listo en 3 pasos",
-      "headline": "Nosotros nos encargamos de todo",
-      "style": "numbered",
-      "steps": [
+      "id": "features",
+      "type": "features",
+      "_note": "FEATURES — Sección unificada de estadísticas y beneficios con nuevo diseño bento.",
+      "sectionLabel": "Santuario en Casa",
+      "headline": "El arte de la desconexión absoluta.",
+      "subheadline": "Diseñado milimétricamente para tu tranquilidad física y mental.",
+      "items": [
         {
-          "number": "01",
-          "title": "Eliges tu fecha",
-          "body": "Contáctanos y coordinamos la entrega en tu domicilio."
+          "icon": "zap",
+          "title": "Tu Oasis Privado, Sin Esperas.",
+          "body": "Transformamos tu espacio en un refugio de paz antes de que te des cuenta. Un diseño amplio y sofisticado, perfecto para compartir momentos inolvidables o reencontrar tu propio centro.",
+          "badges": ["⏱️ 60 Minutos", "👥 6 Personas"]
         },
         {
-          "number": "02",
-          "title": "Instalación express",
-          "body": "En 60 minutos dejamos el jacuzzi armado, lleno y listo para calentar."
+          "icon": "shield-check",
+          "title": "Pureza Cristalina a 40°C.",
+          "body": "Sumérgete en un microclima perfecto sin importar la estación. Nuestro sistema clínico de purificación garantiza un agua prístina, libre de olores fuertes y químicos invasivos que comprometan el cuidado de tu piel.",
+          "badges": ["🌡️ 40°C Constantes", "💧 99.9% Libre de Bacterias", "✨ UVC + Ozono"]
         },
         {
-          "number": "03",
-          "title": "Calma Total",
-          "body": "Súmate al relajo y disfruta de burbujas a la temperatura ideal."
+          "icon": "banknote",
+          "title": "Lujo Inteligente, Cero Estrés.",
+          "body": "La verdadera relajación exige paz mental a fin de mes. Disfruta de un sistema optimizado de bajo consumo; diseñado para que tu única preocupación sea no querer salir del agua.",
+          "badges": ["💎 Eficiencia Hídrica", "⚡ $2.000 a $3.000 por ciclo"]
         }
       ]
     },
@@ -197,6 +173,24 @@
         { "text": "Consultar Disponibilidad", "href": "https://wa.me/56967014233", "variant": "primary" }
       ],
       "style": "gradient"
+    },
+    {
+      "id": "contacto",
+      "type": "contact-form",
+      "_note": "CONTACTO — Captación de leads con validación.",
+      "headline": "Solicita tu SPA hoy",
+      "subheadline": "Déjanos tus datos y te contactaremos para confirmar disponibilidad en menos de 24 horas.",
+      "fields": [
+        { "id": "nombre", "type": "text", "label": "Nombre Completo", "placeholder": "Ej: Juan Pérez", "required": true },
+        { "id": "email", "type": "email", "label": "Email", "placeholder": "juan@ejemplo.com", "required": true },
+        { "id": "telefono", "type": "tel", "label": "Teléfono", "placeholder": "+56 9 ...", "required": true },
+        { "id": "fecha", "type": "text", "label": "Fecha deseada", "placeholder": "Ej: Próximo fin de semana", "required": false },
+        { "id": "mensaje", "type": "textarea", "label": "Dudas o comentarios", "placeholder": "Cuéntanos sobre tu evento (cumpleaños, aniversario...)", "required": false }
+      ],
+      "submitLabel": "Solicitar mi SPA hoy",
+      "successMessage": "¡Recibido! Nos pondremos en contacto contigo muy pronto.",
+      "errorMessage": "Hubo un error. Por favor intenta por WhatsApp.",
+      "destinationEmail": "hola@calmaspa.cl"
     },
     {
       "id": "footer",

@@ -1,8 +1,7 @@
 import { siteConfig } from "@/lib/config"
 import { Navbar } from "@/components/layout/Navbar"
 import { HeroSection } from "@/components/sections/HeroSection"
-import { StatsSection } from "@/components/sections/StatsSection"
-import { BenefitsGrid } from "@/components/sections/BenefitsGrid"
+import { FeaturesSection } from "@/components/sections/FeaturesSection"
 import { StepsSection } from "@/components/sections/StepsSection"
 import { FAQSection } from "@/components/sections/FAQSection"
 import { InstagramFeed } from "@/components/sections/InstagramFeed"
@@ -19,10 +18,8 @@ export default function Home() {
             return <Navbar key={section.id} />
           case "hero":
             return <HeroSection key={section.id} />
-          case "stats":
-            return <StatsSection key={section.id} />
-          case "benefits-grid":
-            return <BenefitsGrid key={section.id} />
+          case "features":
+            return <FeaturesSection key={section.id} />
           case "steps":
             return <StepsSection key={section.id} />
           case "faq":

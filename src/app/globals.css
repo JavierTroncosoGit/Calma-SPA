@@ -8,9 +8,9 @@
   /* Brand Colors from site.config.json */
   --color-primary: #004a45;
   --color-accent: #004a45;
-  --color-bg-primary: #FDF7F0;
+  --color-bg-primary: #ffffff;
   --color-bg-secondary: #ffffff;
-  --color-text-primary: #333333;
+  --color-text-primary: #004a45;
   --color-text-secondary: #004a45;
 
   /* Layout — contenedor de contenido. NUNCA CAMBIAR */
@@ -21,22 +21,22 @@
   --font-size-display: clamp(1.875rem, 3.5vw, 3rem);
 
   /* Shadcn overrides/mappings */
-  --color-background: var(--bg-primary);
-  --color-foreground: var(--text-primary);
-  --color-card: var(--bg-secondary);
-  --color-card-foreground: var(--text-primary);
-  --color-popover: var(--bg-secondary);
-  --color-popover-foreground: var(--text-primary);
-  --color-muted: color-mix(in srgb, var(--bg-primary), black 5%);
-  --color-muted-foreground: var(--text-primary);
-  --color-border: color-mix(in srgb, var(--primary), transparent 85%);
-  --color-input: color-mix(in srgb, var(--primary), transparent 90%);
-  --color-ring: var(--primary);
+  --color-background: #ffffff;
+  --color-foreground: #004a45;
+  --color-card: #ffffff;
+  --color-card-foreground: #004a45;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #004a45;
+  --color-muted: color-mix(in srgb, #ffffff, black 5%);
+  --color-muted-foreground: #004a45;
+  --color-border: color-mix(in srgb, #004a45, transparent 85%);
+  --color-input: color-mix(in srgb, #004a45, transparent 90%);
+  --color-ring: #004a45;
 }
 
 :root {
-  --background: #FDF7F0;
-  --foreground: #333333;
+  --background: #ffffff;
+  --foreground: #004a45;
   --primary: #004a45;
   --primary-foreground: #ffffff;
   --accent: #004a45;

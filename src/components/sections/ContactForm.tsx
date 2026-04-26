@@ -16,6 +16,7 @@ import { es } from "date-fns/locale"
 import { CalendarIcon, CheckCircle2, Loader2 } from "lucide-react"
 import { Calendar } from "@/components/ui/calendar"
 import Image from "next/image"
+import { DateRange } from "react-day-picker"
 
 function DateRangePickerField({
   placeholder,
@@ -24,7 +25,7 @@ function DateRangePickerField({
   onChange,
 }: {
   placeholder?: string
-  value?: { from?: Date; to?: Date }
+  value?: DateRange
   hasError: boolean
   onChange: (val: any) => void
 }) {
@@ -121,9 +122,9 @@ export function ContactForm() {
   // Fixed schema for the specific fields required
   const contactSchema = z.object({
     fecha: z.object({
-      from: z.date({ required_error: "Debes seleccionar una fecha de inicio." }),
-      to: z.date({ required_error: "Debes seleccionar una fecha de fin." }).optional(),
-    }, { required_error: "Por favor selecciona un rango de fechas." }),
+      from: z.date({ message: "Debes seleccionar una fecha de inicio." }),
+      to: z.date({ message: "Debes seleccionar una fecha de fin." }).optional(),
+    }, { message: "Por favor selecciona un rango de fechas." }),
     nombre: z.string().min(2, "Necesitamos tu nombre para la reserva."),
     telefono: z.string().min(8, "Ingresa un teléfono válido."),
     comuna: z.string().min(3, "Necesitamos tu comuna para factibilidad."),

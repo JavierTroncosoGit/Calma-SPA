@@ -1,17 +1,19 @@
 import type { Metadata } from "next"
-import { Outfit, DM_Sans } from "next/font/google"
+import { Roboto } from "next/font/google"
 import Script from "next/script"
 import { siteConfig } from "@/lib/config"
 import { SmoothScroll } from "@/components/layout/SmoothScroll"
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton"
 import "./globals.css"
 
-const outfit = Outfit({
+const robotoTitles = Roboto({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-titles",
 })
 
-const dmSans = DM_Sans({
+const robotoBody = Roboto({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-body",
 })
@@ -91,7 +93,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} ${dmSans.variable} font-body min-h-screen antialiased`}
+        className={`${robotoTitles.variable} ${robotoBody.variable} font-body min-h-screen antialiased`}
       >
         <SmoothScroll>
           {children}

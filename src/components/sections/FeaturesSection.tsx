@@ -21,35 +21,33 @@ export function FeaturesSection() {
       <div className="mx-auto max-w-(--max-w-content) px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center md:text-left mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="max-w-2xl">
-            {data.sectionLabel && (
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-semibold tracking-wider uppercase text-sm mb-6"
-              >
-                {data.sectionLabel}
-              </motion.span>
-            )}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24 flex flex-col items-center">
+          {data.sectionLabel && (
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="font-titles text-font-size-display text-text-secondary leading-tight"
+              className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-semibold tracking-wider uppercase text-sm mb-6"
             >
-              {data.headline}
-            </motion.h2>
-          </div>
+              {data.sectionLabel}
+            </motion.span>
+          )}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-titles text-font-size-display text-text-secondary leading-tight"
+          >
+            {data.headline}
+          </motion.h2>
           {data.subheadline && (
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="text-lg text-text-primary/70 max-w-md"
+              className="mt-6 text-lg md:text-xl text-text-primary/70 max-w-2xl mx-auto font-light"
             >
               {data.subheadline}
             </motion.p>

@@ -30,13 +30,19 @@
     }
   },
   "fonts": {
-    "titles": "Outfit",
-    "body": "DM Sans"
+    "titles": "Roboto",
+    "body": "Roboto"
   },
   "seo": {
     "title": "Calma SPA | Arriendo de Jacuzzis Inflables Premium en RM",
     "description": "Vive la experiencia de un SPA en casa. Jacuzzis inflables con tecnología de ozono, agua a 40°C e instalación en 60 minutos en la Región Metropolitana.",
-    "keywords": ["arriendo jacuzzi", "spa a domicilio", "jacuzzi inflable", "relajación rm", "calma spa"],
+    "keywords": [
+      "arriendo jacuzzi",
+      "spa a domicilio",
+      "jacuzzi inflable",
+      "relajación rm",
+      "calma spa"
+    ],
     "canonicalUrl": "https://calmaspa.cl"
   },
   "contact": {
@@ -57,20 +63,36 @@
       "type": "navbar",
       "_note": "Barra de navegación con logo y link directo a WhatsApp.",
       "links": [
-        { "text": "Beneficios", "href": "#beneficios" },
-        { "text": "Cómo funciona", "href": "#como-funciona" },
-        { "text": "Preguntas", "href": "#faq" }
+        {
+          "text": "Beneficios",
+          "href": "#beneficios"
+        },
+        {
+          "text": "Cómo funciona",
+          "href": "#como-funciona"
+        },
+        {
+          "text": "Preguntas",
+          "href": "#faq"
+        }
       ],
-      "cta": { "text": "Cotizar ahora", "href": "https://wa.me/56967014233" }
+      "cta": {
+        "text": "Cotizar ahora",
+        "href": "https://wa.me/56967014233"
+      }
     },
     {
       "id": "hero",
       "type": "hero",
       "_note": "HERO — Propuesta de valor principal con fondo premium.",
       "headline": "Arriendo de Jacuzzis Premium: El lujo de un SPA en tu casa.",
-      "subheadline": "Disfruta de instalación express en 60 minutos, higiene clínica certificada y agua a 40°C en toda la Región Metropolitana.",
+      "subheadline": "Llevamos el bienestar a la puerta de tu hogar",
       "ctas": [
-        { "text": "Agendar mi experiencia", "href": "https://wa.me/56967014233", "variant": "primary" }
+        {
+          "text": "Agendar mi experiencia",
+          "href": "https://wa.me/56967014233",
+          "variant": "primary"
+        }
       ],
       "media": {
         "type": "image",
@@ -114,19 +136,29 @@
           "icon": "zap",
           "title": "Tu Oasis Privado, Sin Esperas.",
           "body": "Transformamos tu espacio en un refugio de paz antes de que te des cuenta. Un diseño amplio y sofisticado, perfecto para compartir momentos inolvidables o reencontrar tu propio centro.",
-          "badges": ["⏱️ 60 Minutos", "👥 6 Personas"]
+          "badges": [
+            "⏱️ 60 Minutos",
+            "👥 6 Personas"
+          ]
         },
         {
           "icon": "shield-check",
           "title": "Pureza Cristalina a 40°C.",
           "body": "Sumérgete en un microclima perfecto sin importar la estación. Nuestro sistema clínico de purificación garantiza un agua prístina, libre de olores fuertes y químicos invasivos que comprometan el cuidado de tu piel.",
-          "badges": ["🌡️ 40°C Constantes", "💧 99.9% Libre de Bacterias", "✨ UVC + Ozono"]
+          "badges": [
+            "🌡️ 40°C Constantes",
+            "💧 99.9% Libre de Bacterias",
+            "✨ UVC + Ozono"
+          ]
         },
         {
           "icon": "banknote",
           "title": "Lujo Inteligente, Cero Estrés.",
           "body": "La verdadera relajación exige paz mental a fin de mes. Disfruta de un sistema optimizado de bajo consumo; diseñado para que tu única preocupación sea no querer salir del agua.",
-          "badges": ["💎 Eficiencia Hídrica", "⚡ $2.000 a $3.000 por ciclo"]
+          "badges": [
+            "💎 Eficiencia Hídrica",
+            "⚡ $2.000 a $3.000 por ciclo"
+          ]
         }
       ]
     },
@@ -134,20 +166,29 @@
       "id": "faq",
       "type": "faq",
       "_note": "FAQ — Resolviendo dudas sobre instalación, clima y manejo.",
-      "headline": "Preguntas Frecuentes",
+      "headline": "Todo lo que necesitas saber para tu tranquilidad.",
+      "subheadline": "Transparencia total. Respuestas claras sobre la logística, higiene y funcionamiento de tu próximo santuario.",
       "schema": true,
       "items": [
         {
-          "question": "¿Es difícil mantenerlo?",
-          "answer": "No, nosotros hacemos todo el trabajo pesado. Tú solo controlas las burbujas desde el panel digital o tu celular."
+          "question": "¿Cómo funciona la instalación y preparación?",
+          "answer": "Nuestro equipo élite realiza el montaje silencioso en solo 60 minutos. Dado que el sistema toma entre 8 y 9 horas en climatizar el agua a sus perfectos 40°C, siempre realizamos la instalación el día previo a tu reserva para garantizar que tu experiencia comience en el minuto exacto que lo desees."
         },
         {
-          "question": "¿Cuándo lo instalan?",
-          "answer": "Lo instalamos el día previo para asegurar que el agua esté a la temperatura ideal cuando quieras usarlo."
+          "question": "¿Cómo garantizan la pureza e higiene del agua?",
+          "answer": "Tu salud es nuestra prioridad absoluta. Cada jacuzzi incorpora un sistema de sanitización de grado clínico que incluye tecnología UVC para esterilización continua y generación de Ozono que oxigena y purifica, eliminando el 99.9% de bacterias sin químicos agresivos ni olores molestos para tu piel."
         },
         {
-          "question": "¿Cuánta agua utiliza?",
-          "answer": "Utiliza aproximadamente 930 litros. No te preocupes, el impacto en tu cuenta es mínimo ($2.000 a $3.000)."
+          "question": "¿Puedo disfrutar la experiencia durante el invierno?",
+          "answer": "Absolutamente. El aislamiento térmico y el sistema de calefacción inteligente mantienen el agua a 40°C constantes. Esto crea un microclima perfecto, permitiéndote sumergirte y relajarte al aire libre incluso en las noches más frías del año en la Región Metropolitana."
+        },
+        {
+          "question": "¿Cuáles son los requisitos de espacio y consumo?",
+          "answer": "Nuestros spas están diseñados para 6 personas, utilizando aproximadamente 930 litros. Pese a su gran tamaño, son extremadamente eficientes: solo requieren un enchufe convencional y el impacto total en tu cuenta de agua varía entre apenas $2.000 y $3.000 CLP."
+        },
+        {
+          "question": "¿Qué tan complejo es operar el jacuzzi?",
+          "answer": "Completamente intuitivo. Controlas la intensidad de las burbujas, la temperatura exacta y los sistemas de filtrado directamente desde un panel digital integrado o, si lo prefieres, a través de tu propio teléfono celular."
         }
       ]
     },
@@ -170,7 +211,11 @@
       "headline": "¿Listo para desconectarte?",
       "subheadline": "Traslado gratuito en toda la RM e instalación el día previo incluida.",
       "ctas": [
-        { "text": "Consultar Disponibilidad", "href": "https://wa.me/56967014233", "variant": "primary" }
+        {
+          "text": "Consultar Disponibilidad",
+          "href": "https://wa.me/56967014233",
+          "variant": "primary"
+        }
       ],
       "style": "gradient"
     },
@@ -178,17 +223,38 @@
       "id": "contacto",
       "type": "contact-form",
       "_note": "CONTACTO — Captación de leads con validación.",
-      "headline": "Solicita tu SPA hoy",
-      "subheadline": "Déjanos tus datos y te contactaremos para confirmar disponibilidad en menos de 24 horas.",
-      "fields": [
-        { "id": "nombre", "type": "text", "label": "Nombre Completo", "placeholder": "Ej: Juan Pérez", "required": true },
-        { "id": "email", "type": "email", "label": "Email", "placeholder": "juan@ejemplo.com", "required": true },
-        { "id": "telefono", "type": "tel", "label": "Teléfono", "placeholder": "+56 9 ...", "required": true },
-        { "id": "fecha", "type": "text", "label": "Fecha deseada", "placeholder": "Ej: Próximo fin de semana", "required": false },
-        { "id": "mensaje", "type": "textarea", "label": "Dudas o comentarios", "placeholder": "Cuéntanos sobre tu evento (cumpleaños, aniversario...)", "required": false }
+      "headline": "Asegura tu espacio de calma.",
+      "subheadline": "Solo toma unos segundos. Elige tus fechas, ingresa tus datos esenciales y nosotros nos encargaremos de orquestar el resto. Disponibilidad limitada cada semana.",
+      "trustBadges": [
+        "⚡ Respuesta en 1 hora",
+        "🛠️ Instalación el día previo",
+        "✨ Higiene Clínica Certificada"
       ],
-      "submitLabel": "Solicitar mi SPA hoy",
-      "successMessage": "¡Recibido! Nos pondremos en contacto contigo muy pronto.",
+      "fields": [
+        {
+          "id": "nombre",
+          "type": "text",
+          "label": "Tu Nombre",
+          "placeholder": "Ej: Juan Pérez",
+          "required": true
+        },
+        {
+          "id": "telefono",
+          "type": "tel",
+          "label": "WhatsApp",
+          "placeholder": "+56 9 ...",
+          "required": true
+        },
+        {
+          "id": "comuna",
+          "type": "text",
+          "label": "Comuna",
+          "placeholder": "Ej: Las Condes",
+          "required": true
+        }
+      ],
+      "submitLabel": "Asegurar mi santuario",
+      "successMessage": "¡Todo listo! Revisando agenda...",
       "errorMessage": "Hubo un error. Por favor intenta por WhatsApp.",
       "destinationEmail": "hola@calmaspa.cl"
     },

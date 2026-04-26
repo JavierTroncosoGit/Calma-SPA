@@ -1,16 +1,88 @@
 "use client"
 
 import * as React from "react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Plus, Minus } from "lucide-react"
 import { siteConfig } from "@/lib/config"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+
+function FAQItem({ 
+  item, 
+  isOpen, 
+  onClick 
+}: { 
+  item: any; 
+  isOpen: boolean; 
+  onClick: () => void 
+}) {
+  return (
+    <motion.div
+      initial={false}
+      className="bg-white rounded-3xl overflow-hidden border border-primary/5 transition-all duration-500 ease-out hover:shadow-[0_15px_40px_rgba(0,74,69,0.06)] cursor-pointer group"
+      onClick={onClick}
+    >
+      <div className="px-6 md:px-10 py-8 flex items-center justify-between gap-6">
+        <h3 className="font-titles text-xl md:text-2xl text-text-secondary leading-tight font-medium tracking-tight group-hover:text-primary transition-colors duration-300">
+          {item.question}
+        </h3>
+        
+        {/* Animated Icon */}
+        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary relative group-hover:bg-primary/10 transition-colors duration-300">
+          <AnimatePresence mode="wait" initial={false}>
+            {isOpen ? (
+              <motion.div
+                key="minus"
+                initial={{ rotate: -180, opacity: 0, scale: 0.5 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: 180, opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute"
+              >
+                <Minus className="w-6 h-6" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="plus"
+                initial={{ rotate: -180, opacity: 0, scale: 0.5 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: 180, opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute"
+              >
+                <Plus className="w-6 h-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* Animated Content */}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ 
+              height: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2, delay: 0.1 }
+            }}
+          >
+            <div className="px-6 md:px-10 pb-10 pt-2 text-lg md:text-xl text-text-primary/70 leading-relaxed font-light">
+              {item.answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  )
+}
 
 export function FAQSection() {
   const data = siteConfig.sections.find((s) => s.type === "faq")
+  // UX Golden Rule: First question open by default
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
+
   if (!data) return null
 
   // Generate JSON-LD schema if required
@@ -28,7 +100,7 @@ export function FAQSection() {
   } : null
 
   return (
-    <section id={data.id} className="py-12 lg:py-20 bg-bg-primary">
+    <section id={data.id} className="py-20 md:py-32 bg-bg-secondary relative">
       {faqSchema && (
         <script
           type="application/ld+json"
@@ -36,29 +108,53 @@ export function FAQSection() {
         />
       )}
       
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-titles text-font-size-display text-text-secondary">
+      {/* Subtle Background Glows */}
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="mx-auto max-w-4xl px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block py-1.5 px-4 rounded-full bg-white border border-primary/10 text-primary font-semibold tracking-wider uppercase text-sm mb-6 shadow-sm"
+          >
+            Transparencia Total
+          </motion.span>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-titles text-font-size-display text-text-secondary leading-tight mb-6"
+          >
             {data.headline}
-          </h2>
+          </motion.h2>
+
+          {data.subheadline && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg md:text-xl text-text-primary/70 font-light max-w-2xl"
+            >
+              {data.subheadline}
+            </motion.p>
+          )}
         </div>
 
-        <Accordion className="w-full space-y-4">
+        <div className="space-y-6">
           {data.items.map((item: any, idx: number) => (
-            <AccordionItem 
-              key={idx} 
-              value={`item-${idx}`}
-              className="border-none bg-bg-secondary rounded-2xl px-6 overflow-hidden shadow-sm"
-            >
-              <AccordionTrigger className="font-titles text-lg text-text-secondary hover:no-underline py-6">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-text-primary/70 pb-6 leading-relaxed">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+            <FAQItem
+              key={idx}
+              item={item}
+              isOpen={openIndex === idx}
+              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+            />
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   )

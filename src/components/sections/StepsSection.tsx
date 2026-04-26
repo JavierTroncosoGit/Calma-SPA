@@ -83,7 +83,7 @@ export function StepsSection() {
                   {/* Timeline Node (Water Droplet) */}
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
                     <motion.div 
-                      initial={{ scale: 0.8, opacity: 0.5, borderColor: 'transparent' }}
+                      initial={{ scale: 0.8, opacity: 0.5, borderColor: 'rgba(0, 74, 69, 0)' }}
                       whileInView={{ scale: 1, opacity: 1, borderColor: '#004a45' }}
                       viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
                       transition={{ duration: 0.5 }}

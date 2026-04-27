@@ -25,7 +25,7 @@ export function CTABanner() {
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-8">
-            <h2 className="font-titles text-4xl md:text-5xl leading-tight">
+            <h2 className="font-titles text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-4">
               {data.headline}
             </h2>
             {data.subheadline && (

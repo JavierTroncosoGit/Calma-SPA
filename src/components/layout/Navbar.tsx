@@ -45,6 +45,7 @@ export function Navbar() {
             fill
             className="object-contain transition-all duration-300 brightness-0 invert"
             priority
+            sizes="(max-width: 768px) 128px, 128px"
           />
         </Link>
 
@@ -91,22 +92,22 @@ export function Navbar() {
             />
             <SheetContent side="right" className="bg-bg-primary pt-12">
               <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
-              <nav className="flex flex-col gap-6">
+              <nav className="flex flex-col items-center justify-center gap-8 py-12">
                 {data.links.map((link: any) => (
-                  <SheetClose key={link.text} render={
+                  <SheetClose key={link.text} nativeButton={false} render={
                     <Link
                       href={link.href}
-                      className="text-lg font-medium text-text-primary hover:text-accent transition-colors"
+                      className="text-2xl font-titles font-medium text-text-secondary hover:text-primary transition-all duration-300"
                     >
                       {link.text}
                     </Link>
                   } />
                 ))}
                 {data.cta && (
-                  <SheetClose render={
+                  <SheetClose nativeButton={false} render={
                     <Link
                       href={data.cta.href}
-                      className={cn(buttonVariants(), "mt-4 bg-primary text-white")}
+                      className={cn(buttonVariants({ size: "lg" }), "mt-8 bg-primary text-white rounded-full px-10 h-14 text-lg")}
                     >
                       {data.cta.text}
                     </Link>

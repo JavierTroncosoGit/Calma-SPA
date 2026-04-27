@@ -113,21 +113,23 @@ export function FAQSection() {
       <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="mx-auto max-w-4xl px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="relative text-center mb-16 md:mb-24 flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block py-1.5 px-4 rounded-full bg-white border border-primary/10 text-primary font-semibold tracking-wider uppercase text-sm mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white border border-primary/10 text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-8 shadow-xs"
           >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Transparencia Total
-          </motion.span>
+          </motion.div>
           
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-titles text-font-size-display text-text-secondary leading-tight mb-6"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-titles text-font-size-display text-text-secondary leading-[1.1] tracking-tight mb-8"
           >
             {data.headline}
           </motion.h2>
@@ -137,8 +139,8 @@ export function FAQSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl text-text-primary/70 font-light max-w-2xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-lg md:text-xl text-text-primary/60 font-light max-w-2xl leading-relaxed"
             >
               {data.subheadline}
             </motion.p>

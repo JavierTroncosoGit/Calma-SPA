@@ -1,16 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { useRef } from "react"
-import { Zap, ShieldCheck, Banknote } from "lucide-react"
-import { motion, Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import { siteConfig } from "@/lib/config"
-
-const iconMap: Record<string, any> = {
-  zap: Zap,
-  "shield-check": ShieldCheck,
-  banknote: Banknote,
-}
 
 export function FeaturesSection() {
   const data = siteConfig.sections.find((s) => s.type === "features")
@@ -21,23 +13,24 @@ export function FeaturesSection() {
       <div className="mx-auto max-w-(--max-w-content) px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24 flex flex-col items-center">
+        <div className="relative text-center max-w-4xl mx-auto mb-16 md:mb-24 flex flex-col items-center">
           {data.sectionLabel && (
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-semibold tracking-wider uppercase text-sm mb-6"
+              className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white border border-primary/10 text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-8 shadow-xs"
             >
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               {data.sectionLabel}
-            </motion.span>
+            </motion.div>
           )}
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-titles text-font-size-display text-text-secondary leading-tight"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-titles text-font-size-display text-text-secondary leading-[1.1] tracking-tight mb-8"
           >
             {data.headline}
           </motion.h2>
@@ -46,8 +39,8 @@ export function FeaturesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 text-lg md:text-xl text-text-primary/70 max-w-2xl mx-auto font-light"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-lg md:text-xl text-text-primary/60 max-w-2xl mx-auto font-light leading-relaxed"
             >
               {data.subheadline}
             </motion.p>
@@ -85,8 +78,6 @@ export function FeaturesSection() {
           {/* Right Side / Mobile Layout: The Cards */}
           <div className="w-full lg:w-7/12 flex flex-col gap-6 relative z-10 pb-[10vh]">
             {data.items.map((item: any, idx: number) => {
-              const Icon = iconMap[item.icon]
-
               return (
                 <motion.div
                   key={idx}
@@ -102,12 +93,9 @@ export function FeaturesSection() {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out" />
                   <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-primary/10 opacity-0 group-hover:opacity-100 blur-[80px] rounded-full transition-opacity duration-1000 pointer-events-none" />
 
-                  {/* Icon & Title */}
+                  {/* Title & Badges */}
                   <div className="relative z-10 mb-8 md:mb-12">
-                    <div className="w-16 h-16 rounded-[1.5rem] bg-bg-primary text-primary flex items-center justify-center mb-8 shadow-sm group-hover:bg-primary group-hover:text-white group-hover:scale-105 transition-all duration-700 ease-[0.22,1,0.36,1]">
-                      {Icon && <Icon className="w-8 h-8 stroke-[1.5]" />}
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-titles text-text-secondary font-medium leading-tight tracking-tight mb-6">
+                    <h3 className="text-3xl md:text-4xl font-titles text-text-secondary font-medium leading-tight tracking-tight mb-6 mt-4">
                       {item.title}
                     </h3>
 
@@ -115,9 +103,19 @@ export function FeaturesSection() {
                     {item.badges && (
                       <div className="flex flex-wrap gap-3 mb-2">
                         {item.badges.map((badge: string, bIdx: number) => (
-                          <span key={bIdx} className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary text-sm font-medium border border-primary/10 backdrop-blur-sm">
-                            {badge}
-                          </span>
+                          <motion.span 
+                            key={bIdx} 
+                            whileHover={{ scale: 1.05 }}
+                            className="relative inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary text-sm font-medium border border-primary/10 overflow-hidden group-hover:border-primary/30 transition-colors"
+                          >
+                            <motion.span 
+                              className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0"
+                              initial={{ x: '-100%' }}
+                              animate={{ x: '200%' }}
+                              transition={{ repeat: Infinity, duration: 2.5, ease: "linear", delay: bIdx * 0.2 }}
+                            />
+                            <span className="relative z-10">{badge}</span>
+                          </motion.span>
                         ))}
                       </div>
                     )}

@@ -170,6 +170,7 @@ export function ContactForm() {
               fill 
               className="object-cover object-center"
               priority
+              sizes="(max-width: 1024px) 100vw, 40vw"
             />
             {/* Dark overlay for contrast */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
@@ -177,10 +178,10 @@ export function ContactForm() {
 
           <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-12 lg:p-16 text-white">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-titles text-4xl md:text-5xl font-medium leading-tight mb-6"
+              className="font-titles text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight mb-8"
             >
               {data.headline}
             </motion.h2>
@@ -278,7 +279,7 @@ export function ContactForm() {
                   <div className="relative">
                     <Input
                       id="nombre"
-                      placeholder="Ej: Juan Pérez"
+                      placeholder={data.fields.find((f: any) => f.id === "nombre")?.placeholder ?? "Tu Nombre"}
                       {...register("nombre")}
                       className={cn(
                         "text-lg h-14 px-4 bg-gray-50/50 border-gray-200 rounded-xl focus-visible:ring-primary/20 focus-visible:border-primary shadow-sm transition-all",
@@ -310,7 +311,7 @@ export function ContactForm() {
                       <Input
                         id="telefono"
                         type="tel"
-                        placeholder="+56 9 ..."
+                        placeholder={data.fields.find((f: any) => f.id === "telefono")?.placeholder ?? "+56 9 ..."}
                         {...register("telefono")}
                         className={cn(
                           "text-lg h-14 px-4 bg-gray-50/50 border-gray-200 rounded-xl focus-visible:ring-primary/20 focus-visible:border-primary shadow-sm transition-all",
@@ -332,7 +333,7 @@ export function ContactForm() {
                     <div className="relative">
                       <Input
                         id="comuna"
-                        placeholder="Ej: Las Condes"
+                        placeholder={data.fields.find((f: any) => f.id === "comuna")?.placeholder ?? "Tu Comuna"}
                         {...register("comuna")}
                         className={cn(
                           "text-lg h-14 px-4 bg-gray-50/50 border-gray-200 rounded-xl focus-visible:ring-primary/20 focus-visible:border-primary shadow-sm transition-all",

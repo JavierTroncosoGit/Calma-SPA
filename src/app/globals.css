@@ -17,8 +17,8 @@
   --max-w-content: 75rem; /* 1200px */
 
   /* Tipografía fluida */
-  --font-size-hero: clamp(2.25rem, 5vw, 4.5rem);
-  --font-size-display: clamp(1.875rem, 3.5vw, 3rem);
+  --font-size-hero: clamp(2.5rem, 6vw, 5rem);
+  --font-size-display: clamp(2rem, 4vw, 3.5rem);
 
   /* Shadcn overrides/mappings */
   --color-background: #ffffff;

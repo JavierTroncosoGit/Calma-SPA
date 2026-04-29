@@ -14,11 +14,11 @@
   "colors": {
     "primary": "#004a45",
     "secondary": "#ffffff",
-    "accent": "#004a45",
+    "accent": "#008f86",
     "bgPrimary": "#ffffff",
-    "bgSecondary": "#ffffff",
+    "bgSecondary": "#e8f0ef",
     "textPrimary": "#004a45",
-    "textSecondary": "#004a45",
+    "textSecondary": "#4d5b5a",
     "_guide": {
       "_uso": "Cambia el hex del token. Guarda y usa el prompt 'Actualizar desde Config'.",
       "primary": "Títulos principales, Botones primarios, Navbar bg",
@@ -85,8 +85,8 @@
       "id": "hero",
       "type": "hero",
       "_note": "HERO — Propuesta de valor principal con fondo premium.",
-      "headline": "Arriendo de Jacuzzis Premium: El lujo de un SPA en tu casa.",
-      "subheadline": "Llevamos el bienestar a la puerta de tu hogar",
+      "headline": "El lujo de la desconexión, en tu propia casa.",
+      "subheadline": "Sumérgete en la calma. Disfruta de un Spa de hidromasaje exclusivo en tu hogar sin preocuparte por nada.",
       "ctas": [
         {
           "text": "Agendar mi experiencia",
@@ -210,9 +210,9 @@
       "headline": "Asegura tu espacio de calma.",
       "subheadline": "Solo toma unos segundos. Elige tus fechas, ingresa tus datos esenciales y nosotros nos encargaremos de orquestar el resto. Disponibilidad limitada cada semana.",
       "trustBadges": [
-        "⚡ Respuesta en 1 hora",
-        "🛠️ Instalación el día previo",
-        "✨ Higiene Clínica Certificada"
+        "Respuesta en 1 hora",
+        "Instalación el día previo",
+        "Higiene Clínica Certificada"
       ],
       "fields": [
         {

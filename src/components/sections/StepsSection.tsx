@@ -10,7 +10,7 @@ export function StepsSection() {
   if (!data) return null
 
   const sectionRef = useRef<HTMLDivElement>(null)
-  
+
   // Track scroll within the section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -27,7 +27,7 @@ export function StepsSection() {
       <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="mx-auto max-w-(--max-w-content) px-6 lg:px-8 relative z-10">
-        
+
         {/* Header Section */}
         <div className="relative text-center max-w-4xl mx-auto mb-20 md:mb-32 flex flex-col items-center">
           {data.sectionLabel && (
@@ -67,39 +67,39 @@ export function StepsSection() {
         <div className="relative max-w-5xl mx-auto">
           {/* Background Line (Empty Channel) */}
           <div className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-primary/10 rounded-full" />
-          
+
           {/* Active Line (Water flowing) */}
-          <motion.div 
-            className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gradient-to-b from-primary/50 to-primary rounded-full shadow-[0_0_15px_rgba(0,74,69,0.5)] origin-top"
+          <motion.div
+            className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gradient-to-b from-accent/50 to-accent rounded-full shadow-[0_0_15px_rgba(0,200,234,0.5)] origin-top"
             style={{ height: lineHeight }}
           />
 
-          <div className="flex flex-col gap-16 md:gap-32">
+          <div className="flex flex-col gap-16 md:gap-32 pt-10">
             {data.steps.map((step: any, idx: number) => {
               const isEven = idx % 2 === 0
-              
+
               return (
                 <div key={idx} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                  
+
                   {/* Timeline Node (Water Droplet) */}
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
-                    <motion.div 
-                      initial={{ scale: 0.8, opacity: 0.5, borderColor: 'rgba(0, 74, 69, 0)' }}
-                      whileInView={{ scale: 1, opacity: 1, borderColor: '#004a45' }}
-                      viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0.5, borderColor: 'rgba(0, 143, 134, 0)' }}
+                      whileInView={{ scale: 1, opacity: 1, borderColor: '#008f86' }}
+                      viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
                       transition={{ duration: 0.5 }}
                       className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-[3px] md:border-4 flex items-center justify-center shadow-lg relative group"
                     >
                       {/* Inner dot */}
-                      <span className="font-titles font-bold text-lg md:text-xl text-primary">{step.number}</span>
-                      
+                      <span className="font-titles font-bold text-lg md:text-xl text-accent">{step.number}</span>
+
                       {/* Ping effect when active */}
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1.5 }}
-                        viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
+                        whileInView={{ opacity: 0.8, scale: 1.5 }}
+                        viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
                         transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeOut" }}
-                        className="absolute inset-0 rounded-full border-2 border-primary/30"
+                        className="absolute inset-0 rounded-full border-2 border-accent/30"
                       />
                     </motion.div>
                   </div>
@@ -116,15 +116,13 @@ export function StepsSection() {
                     className={`w-full pl-20 md:w-1/2 md:pl-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}
                   >
                     <div className="relative group">
-                      {/* Hover floating effect wrapper */}
-                      <div className="relative z-10 p-8 md:p-10 rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-primary/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,74,69,0.08)] transition-all duration-700 ease-out hover:-translate-y-2">
-                        {/* Hover subtle background glow */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.5rem] pointer-events-none" />
+                      {/* Premium Card Container */}
+                      <div className="relative z-10 p-10 md:p-14 rounded-[3rem] bg-white shadow-[0_10px_30px_rgba(0,74,69,0.06)] transition-all duration-700 ease-out hover:shadow-[0_20px_50px_rgba(0,74,69,0.12)] hover:-translate-y-2">
                         
-                        <h3 className="font-titles text-2xl md:text-3xl text-text-secondary mb-4 tracking-tight">
+                        <h3 className="font-titles text-2xl md:text-3xl text-text-primary font-semibold mb-4 tracking-tight">
                           {step.title}
                         </h3>
-                        <p className="text-lg text-text-primary/70 leading-relaxed font-light">
+                        <p className="text-lg text-text-secondary leading-relaxed font-normal">
                           {step.body}
                         </p>
                       </div>

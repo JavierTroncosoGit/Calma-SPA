@@ -53,8 +53,9 @@ export function HeroSection() {
           <div className="w-full h-full bg-primary/20" />
         )}
         
-        {/* Overlay / Filtro oscuro para resaltar textos */}
-        <div className="absolute inset-0 bg-black/20 bg-gradient-to-t from-black/60 via-black/10 to-black/30 pointer-events-none" />
+        {/* Overlay / Filtro negro al 40% para resaltar textos */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none z-1" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none z-2" />
       </div>
 
       {/* Content (Centrado y Moderno) */}
@@ -72,7 +73,7 @@ export function HeroSection() {
           </h1>
           
           {data.subheadline && (
-            <p className="text-lg md:text-2xl text-white/90 max-w-2xl leading-relaxed font-light mt-2 mb-6">
+            <p className="text-lg md:text-2xl text-white max-w-3xl leading-relaxed font-medium mt-2 mb-6 drop-shadow-md">
               {data.subheadline}
             </p>
           )}

@@ -99,10 +99,7 @@ export default function RootLayout({
           {children}
           <WhatsAppButton />
         </SmoothScroll>
-        <Script
-          src="https://platform.instagram.com/en_US/embeds.js"
-          strategy="lazyOnload"
-        />
+
       </body>
     </html>
   )

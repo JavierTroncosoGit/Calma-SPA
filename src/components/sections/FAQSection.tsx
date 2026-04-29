@@ -18,16 +18,16 @@ function FAQItem({
   return (
     <motion.div
       initial={false}
-      className="bg-white rounded-3xl overflow-hidden border border-primary/5 transition-all duration-500 ease-out hover:shadow-[0_15px_40px_rgba(0,74,69,0.06)] cursor-pointer group"
+      className="bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,74,69,0.06)] transition-all duration-500 ease-out hover:shadow-[0_20px_50px_rgba(0,74,69,0.12)] cursor-pointer group"
       onClick={onClick}
     >
-      <div className="px-6 md:px-10 py-8 flex items-center justify-between gap-6">
-        <h3 className="font-titles text-xl md:text-2xl text-text-secondary leading-tight font-medium tracking-tight group-hover:text-primary transition-colors duration-300">
+      <div className="px-8 md:px-12 py-8 flex items-center justify-between gap-6">
+        <h3 className="font-titles text-xl md:text-2xl text-text-primary leading-tight font-medium tracking-tight group-hover:text-accent transition-colors duration-300">
           {item.question}
         </h3>
         
         {/* Animated Icon */}
-        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary relative group-hover:bg-primary/10 transition-colors duration-300">
+        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/5 flex items-center justify-center text-accent relative group-hover:bg-accent/10 transition-colors duration-300">
           <AnimatePresence mode="wait" initial={false}>
             {isOpen ? (
               <motion.div
@@ -68,7 +68,7 @@ function FAQItem({
               opacity: { duration: 0.2, delay: 0.1 }
             }}
           >
-            <div className="px-6 md:px-10 pb-10 pt-2 text-lg md:text-xl text-text-primary/70 leading-relaxed font-light">
+            <div className="px-8 md:px-12 pb-10 pt-2 text-lg md:text-xl text-text-secondary leading-relaxed font-normal">
               {item.answer}
             </div>
           </motion.div>

@@ -7,11 +7,12 @@
 @theme {
   /* Brand Colors from site.config.json */
   --color-primary: #004a45;
-  --color-accent: #004a45;
+  --color-secondary: #ffffff;
+  --color-accent: #008f86;
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #ffffff;
+  --color-bg-secondary: #e8f0ef;
   --color-text-primary: #004a45;
-  --color-text-secondary: #004a45;
+  --color-text-secondary: #4d5b5a;
 
   /* Layout — contenedor de contenido. NUNCA CAMBIAR */
   --max-w-content: 75rem; /* 1200px */
@@ -28,10 +29,10 @@
   --color-popover: #ffffff;
   --color-popover-foreground: #004a45;
   --color-muted: color-mix(in srgb, #ffffff, black 5%);
-  --color-muted-foreground: #004a45;
+  --color-muted-foreground: #3a4f4d;
   --color-border: color-mix(in srgb, #004a45, transparent 85%);
   --color-input: color-mix(in srgb, #004a45, transparent 90%);
-  --color-ring: #004a45;
+  --color-ring: #008f86;
 }
 
 :root {
@@ -39,7 +40,9 @@
   --foreground: #004a45;
   --primary: #004a45;
   --primary-foreground: #ffffff;
-  --accent: #004a45;
+  --secondary: #ffffff;
+  --secondary-foreground: #004a45;
+  --accent: #008f86;
   --accent-foreground: #ffffff;
   --radius: 0.75rem;
 }
@@ -49,7 +52,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-bg-primary text-text-primary;
+    @apply bg-bg-primary text-text-primary overflow-x-clip;
   }
   input, textarea, select {
     font-size: max(16px, 1rem);

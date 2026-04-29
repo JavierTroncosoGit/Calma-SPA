@@ -107,7 +107,7 @@ export function Navbar() {
                   <SheetClose nativeButton={false} render={
                     <Link
                       href={data.cta.href}
-                      className={cn(buttonVariants({ size: "lg" }), "mt-8 bg-primary text-white rounded-full px-10 h-14 text-lg")}
+                      className={cn(buttonVariants({ size: "lg" }), "mt-8 bg-accent text-white rounded-full px-10 h-14 text-lg")}
                     >
                       {data.cta.text}
                     </Link>

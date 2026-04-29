@@ -2,7 +2,14 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
+import { Zap, ShieldCheck, Banknote } from "lucide-react"
 import { siteConfig } from "@/lib/config"
+
+const iconMap: Record<string, React.ReactNode> = {
+  zap: <Zap className="w-6 h-6" strokeWidth={1.5} />,
+  "shield-check": <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />,
+  banknote: <Banknote className="w-6 h-6" strokeWidth={1.5} />,
+}
 
 export function FeaturesSection() {
   const data = siteConfig.sections.find((s) => s.type === "features")
@@ -76,7 +83,7 @@ export function FeaturesSection() {
           </div>
 
           {/* Right Side / Mobile Layout: The Cards */}
-          <div className="w-full lg:w-7/12 flex flex-col gap-6 relative z-10 pb-[10vh]">
+          <div className="w-full lg:w-7/12 flex flex-col gap-8 relative z-10 pb-[10vh]">
             {data.items.map((item: any, idx: number) => {
               return (
                 <motion.div
@@ -86,36 +93,35 @@ export function FeaturesSection() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 1.2, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   // Parallax Stacking for mobile and desktop
-                  className="sticky group relative flex flex-col justify-between p-8 md:p-12 rounded-[2.5rem] bg-white border border-primary/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden transition-all duration-[1.5s] ease-out hover:rounded-[3rem]"
-                  style={{ top: `calc(120px + ${idx * 40}px)` }}
+                  className="sticky group relative flex flex-col justify-between p-10 md:p-14 rounded-[3rem] bg-white shadow-[0_10px_30px_rgba(0,74,69,0.06)] overflow-hidden transition-all duration-700 ease-out hover:shadow-[0_20px_50px_rgba(0,74,69,0.12)]"
+                  style={{ top: `calc(120px + ${idx * 40}px)`, zIndex: idx + 1 }}
                 >
-                  {/* Subtle Hover Gradient & Blur Follower */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out" />
-                  <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-primary/10 opacity-0 group-hover:opacity-100 blur-[80px] rounded-full transition-opacity duration-1000 pointer-events-none" />
+                  {/* Subtle Hover Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out" />
+
+                  {/* Iconography */}
+                  <div className="relative z-10 mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
+                      {iconMap[item.icon] || <Zap strokeWidth={1.5} />}
+                    </div>
+                  </div>
 
                   {/* Title & Badges */}
-                  <div className="relative z-10 mb-8 md:mb-12">
-                    <h3 className="text-3xl md:text-4xl font-titles text-text-secondary font-medium leading-tight tracking-tight mb-6 mt-4">
+                  <div className="relative z-10 mb-8">
+                    <h3 className="text-2xl md:text-3xl font-titles text-text-primary font-semibold leading-tight tracking-tight mb-4">
                       {item.title}
                     </h3>
 
                     {/* Badges */}
                     {item.badges && (
-                      <div className="flex flex-wrap gap-3 mb-2">
+                      <div className="flex flex-wrap gap-2 mb-2">
                         {item.badges.map((badge: string, bIdx: number) => (
-                          <motion.span 
+                          <span 
                             key={bIdx} 
-                            whileHover={{ scale: 1.05 }}
-                            className="relative inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary text-sm font-medium border border-primary/10 overflow-hidden group-hover:border-primary/30 transition-colors"
+                            className="inline-flex items-center px-3 py-1 rounded-full bg-bg-secondary text-text-secondary/80 text-[11px] font-medium tracking-wide uppercase border border-primary/5"
                           >
-                            <motion.span 
-                              className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0"
-                              initial={{ x: '-100%' }}
-                              animate={{ x: '200%' }}
-                              transition={{ repeat: Infinity, duration: 2.5, ease: "linear", delay: bIdx * 0.2 }}
-                            />
-                            <span className="relative z-10">{badge}</span>
-                          </motion.span>
+                            {badge}
+                          </span>
                         ))}
                       </div>
                     )}
@@ -123,7 +129,7 @@ export function FeaturesSection() {
 
                   {/* Body Text */}
                   <div className="relative z-10 mt-auto">
-                    <p className="text-lg md:text-xl text-text-primary/70 leading-relaxed font-light group-hover:text-text-primary transition-colors duration-500">
+                    <p className="text-lg md:text-xl text-text-secondary leading-relaxed font-normal">
                       {item.body}
                     </p>
                   </div>

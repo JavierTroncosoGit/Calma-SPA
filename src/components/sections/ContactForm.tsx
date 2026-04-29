@@ -354,8 +354,8 @@ export function ContactForm() {
                       type="submit"
                       disabled={isSubmitting}
                       className={cn(
-                        "w-full bg-primary text-white hover:bg-primary/90 h-16 rounded-full text-xl font-medium shadow-[0_10px_30px_rgba(0,74,69,0.2)] transition-all duration-300 relative overflow-hidden",
-                        isSubmitting && "bg-primary/80"
+                        "w-full bg-accent text-white hover:bg-accent/90 h-16 rounded-full text-xl font-medium shadow-[0_10px_30px_rgba(0,143,134,0.2)] transition-all duration-300 relative overflow-hidden",
+                        isSubmitting && "bg-accent/80"
                       )}
                     >
                       <AnimatePresence mode="wait">

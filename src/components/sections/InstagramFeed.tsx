@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
+import Script from "next/script"
 import { siteConfig } from "@/lib/config"
 
 declare global {
@@ -22,25 +23,19 @@ export function InstagramFeed() {
     setMounted(true)
   }, [])
 
-  // Process Instagram embeds once the script is loaded
+  // Función robusta para procesar los embeds
+  const processEmbeds = React.useCallback(() => {
+    if (typeof window !== "undefined" && window.instgrm) {
+      window.instgrm.Embeds.process()
+    }
+  }, [])
+
+  // Asegurar que se procesen al montar si el script ya existe
   React.useEffect(() => {
-    if (!mounted) return
-
-    const processEmbeds = () => {
-      if (typeof window !== "undefined" && window.instgrm) {
-        window.instgrm.Embeds.process()
-      }
+    if (mounted && typeof window !== "undefined" && window.instgrm) {
+      processEmbeds()
     }
-
-    processEmbeds()
-    const timer1 = setTimeout(processEmbeds, 1000)
-    const timer2 = setTimeout(processEmbeds, 3000)
-
-    return () => {
-      clearTimeout(timer1)
-      clearTimeout(timer2)
-    }
-  }, [mounted])
+  }, [mounted, processEmbeds])
 
   if (!data) return null
 
@@ -50,6 +45,18 @@ export function InstagramFeed() {
 
   return (
     <section id={data.id} className="py-12 lg:py-20 bg-bg-secondary border-t border-border/50">
+      <style dangerouslySetInnerHTML={{ __html: `
+        .instagram-media-container iframe {
+          touch-action: pan-y !important;
+          pointer-events: auto !important;
+        }
+      `}} />
+      <Script 
+        src="https://www.instagram.com/embed.js" 
+        strategy="afterInteractive"
+        onLoad={processEmbeds}
+      />
+      
       <div className="mx-auto max-w-(--max-w-content) px-6 lg:px-8">
         <div className="relative text-center max-w-4xl mx-auto mb-16 flex flex-col items-center">
           <motion.div
@@ -95,23 +102,25 @@ export function InstagramFeed() {
               transition={{ delay: idx * 0.1 }}
               className="flex items-center justify-center w-full"
             >
-              <div 
-                className="w-full flex justify-center"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    <blockquote
-                      class="instagram-media"
-                      data-instgrm-permalink="${baseUrl}/${postId}/?utm_source=ig_embed&amp;utm_campaign=loading"
-                      data-instgrm-version="14"
-                      style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"
-                    >
-                      <a href="${baseUrl}/${postId}/" target="_blank" rel="noopener noreferrer" style="color:#004a45; font-family:sans-serif; font-size:14px; text-decoration:none;">
-                        Ver en Instagram
-                      </a>
-                    </blockquote>
-                  `
-                }}
-              />
+              <div className="relative w-full group instagram-media-container">
+                <div 
+                  className="w-full flex justify-center overflow-hidden rounded-xl max-h-[580px] pointer-events-none"
+                  dangerouslySetInnerHTML={{
+                    __html: `
+                      <blockquote
+                        class="instagram-media"
+                        data-instgrm-permalink="${baseUrl}/${postId}/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"
+                      >
+                        <a href="${baseUrl}/${postId}/" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary); font-family:sans-serif; font-size:14px; text-decoration:none;">
+                          Ver en Instagram
+                        </a>
+                      </blockquote>
+                    `
+                  }}
+                />
+              </div>
             </motion.div>
           ))}
         </div>

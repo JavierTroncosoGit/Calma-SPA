@@ -85,11 +85,11 @@
       "id": "hero",
       "type": "hero",
       "_note": "HERO — Propuesta de valor principal con fondo premium.",
-      "headline": "El lujo de la desconexión, en tu propia casa.",
-      "subheadline": "Sumérgete en la calma. Disfruta de un Spa de hidromasaje exclusivo en tu hogar sin preocuparte por nada.",
+      "headline": "Tu spa privado, donde tú quieras.",
+      "subheadline": "Jacuzzi con agua caliente a 40°C, directo en tu casa. Lo armamos, lo llenamos, tú solo disfrutas.",
       "ctas": [
         {
-          "text": "Agendar mi experiencia",
+          "text": "Cotizar por WhatsApp",
           "href": "https://wa.me/56967014233",
           "variant": "primary"
         }
@@ -103,24 +103,24 @@
       "id": "como-funciona",
       "type": "steps",
       "_note": "PASOS — El proceso llave en mano explicado simple.",
-      "sectionLabel": "Experiencia Llave en Mano",
-      "headline": "Un proceso sin fricciones, como el agua.",
-      "subheadline": "Tú solo eliges el momento; nosotros orquestamos la calma.",
+      "sectionLabel": "¿Cómo funciona?",
+      "headline": "Tres pasos y listo.",
+      "subheadline": "Tú eliges el día, nosotros nos encargamos de todo lo demás.",
       "steps": [
         {
           "number": "01",
-          "title": "Reserva tu Instante.",
-          "body": "Selecciona el momento perfecto. Nuestro equipo se encarga de la logística y el traslado con total discreción, puntualidad y cero complicaciones para ti."
+          "title": "Elige tu fecha.",
+          "body": "Escríbenos por WhatsApp o llena el formulario. Te confirmamos disponibilidad y coordinamos el día."
         },
         {
           "number": "02",
-          "title": "Despliegue Silencioso.",
-          "body": "En solo 60 minutos, transformamos tu ambiente. Realizamos el montaje experto, el llenado purificado y la calibración térmica sin interrumpir la paz de tu hogar."
+          "title": "Nosotros instalamos.",
+          "body": "Llegamos el día anterior, armamos el jacuzzi en 60 minutos, lo llenamos y lo dejamos calentando para que esté perfecto cuando tú quieras."
         },
         {
           "number": "03",
-          "title": "Inmersión Absoluta.",
-          "body": "El agua ha alcanzado sus 40°C perfectos. Entrégate a la calidez, deja que el sistema de burbujas disuelva la tensión y disfruta de tu nuevo santuario."
+          "title": "Tú disfrutas.",
+          "body": "Agua a 40°C, burbujas, y nada de qué preocuparte. Cuando termines, lo retiramos sin costo."
         }
       ]
     },
@@ -128,14 +128,14 @@
       "id": "features",
       "type": "features",
       "_note": "FEATURES — Sección unificada de estadísticas y beneficios con nuevo diseño bento.",
-      "sectionLabel": "Santuario en Casa",
-      "headline": "El arte de la desconexión absoluta.",
-      "subheadline": "Diseñado milimétricamente para tu tranquilidad física y mental.",
+      "sectionLabel": "¿Qué incluye?",
+      "headline": "Todo lo que necesitas, nada que te complique.",
+      "subheadline": "Cada detalle está pensado para que tu única tarea sea relajarte.",
       "items": [
         {
           "icon": "zap",
-          "title": "Tu Oasis Privado, Instalado en Minutos.",
-          "body": "Transformamos tu terraza o patio en un spa de lujo en solo 60 minutos. Nuestro equipo se encarga del montaje y llenado de manera silenciosa. Un espacio amplio y confortable diseñado para compartir.",
+          "title": "Listo en 60 minutos.",
+          "body": "Nuestro equipo llega, arma el jacuzzi y lo deja funcionando en tu terraza o patio. Capacidad para 6 personas cómodas.",
           "badges": [
             "Montaje en 60 min",
             "Capacidad 6 personas"
@@ -143,21 +143,21 @@
         },
         {
           "icon": "shield-check",
-          "title": "Pureza Cristalina y 40°C Constantes.",
-          "body": "Sumérgete en un microclima perfecto durante todo el año. Nuestro avanzado sistema de sanitización mantiene el agua prístina y libre de bacterias, protegiendo tu piel sin el uso de químicos invasivos.",
+          "title": "Agua limpia, caliente, siempre.",
+          "body": "El sistema de sanitización UVC + Ozono elimina el 99.9% de las bacterias sin químicos agresivos. El agua se mantiene a 40°C incluso en pleno invierno.",
           "badges": [
             "Agua a 40°C",
-            "Filtro UVC y Ozono",
-            "Cuidado de tu Piel"
+            "Filtro UVC + Ozono",
+            "Seguro para tu piel"
           ]
         },
         {
           "icon": "banknote",
-          "title": "Lujo Inteligente de Bajo Consumo.",
-          "body": "La verdadera relajación incluye paz mental. Disfruta de un sistema térmico optimizado que mantiene la temperatura de forma eficiente, logrando un consumo mínimo para que solo te preocupes de descansar.",
+          "title": "Casi no se nota en la cuenta.",
+          "body": "Solo necesitas un enchufe normal. El consumo de agua sube entre $2.000 y $3.000 CLP. Sin sorpresas.",
           "badges": [
-            "Eficiencia Energética",
-            "Consumo Optimizado"
+            "Enchufe convencional",
+            "Bajo consumo"
           ]
         }
       ]
@@ -166,28 +166,28 @@
       "id": "faq",
       "type": "faq",
       "_note": "FAQ — Resolviendo dudas sobre instalación, clima y manejo.",
-      "headline": "Todo lo que necesitas saber para tu tranquilidad.",
+      "headline": "Preguntas frecuentes",
       "schema": true,
       "items": [
         {
-          "question": "¿Cómo funciona la instalación y preparación?",
-          "answer": "Nuestro equipo élite realiza el montaje silencioso en solo 60 minutos. Dado que el sistema toma entre 8 y 9 horas en climatizar el agua a sus perfectos 40°C, siempre realizamos la instalación el día previo a tu reserva para garantizar que tu experiencia comience en el minuto exacto que lo desees."
+          "question": "¿Cómo es la instalación?",
+          "answer": "Llegamos el día anterior a tu reserva. El armado toma unos 60 minutos, pero el agua necesita entre 8 y 9 horas para llegar a 40°C, por eso siempre instalamos con anticipación."
         },
         {
-          "question": "¿Cómo garantizan la pureza e higiene del agua?",
-          "answer": "Tu salud es nuestra prioridad absoluta. Cada jacuzzi incorpora un sistema de sanitización de grado clínico que incluye tecnología UVC para esterilización continua y generación de Ozono que oxigena y purifica, eliminando el 99.9% de bacterias sin químicos agresivos ni olores molestos para tu piel."
+          "question": "¿El agua es higiénica?",
+          "answer": "Sí. Cada jacuzzi tiene un sistema de desinfección con luz UVC y Ozono que elimina el 99.9% de las bacterias. No usa cloro ni químicos agresivos, así que es seguro para tu piel."
         },
         {
-          "question": "¿Puedo disfrutar la experiencia durante el invierno?",
-          "answer": "Absolutamente. El aislamiento térmico y el sistema de calefacción inteligente mantienen el agua a 40°C constantes. Esto crea un microclima perfecto, permitiéndote sumergirte y relajarte al aire libre incluso en las noches más frías del año en la Región Metropolitana."
+          "question": "¿Funciona en invierno?",
+          "answer": "Totalmente. El jacuzzi tiene aislación térmica y calefacción que mantienen los 40°C aunque esté helando afuera. De hecho, en invierno se disfruta aún más."
         },
         {
-          "question": "¿Cuáles son los requisitos de espacio y consumo?",
-          "answer": "Nuestros spas están diseñados para 6 personas, utilizando aproximadamente 930 litros. Pese a su gran tamaño, son extremadamente eficientes: solo requieren un enchufe convencional y el impacto total en tu cuenta de agua varía entre apenas $2.000 y $3.000 CLP."
+          "question": "¿Cuánta agua y luz gasta?",
+          "answer": "Usa unos 930 litros de agua. Se conecta a un enchufe normal y el impacto en tu boleta es mínimo: entre $2.000 y $3.000 CLP en agua."
         },
         {
-          "question": "¿Qué tan complejo es operar el jacuzzi?",
-          "answer": "Completamente intuitivo. Controlas la intensidad de las burbujas, la temperatura exacta y los sistemas de filtrado directamente desde un panel digital integrado o, si lo prefieres, a través de tu propio teléfono celular."
+          "question": "¿Es difícil de usar?",
+          "answer": "Para nada. Tiene un panel digital donde controlas temperatura, burbujas y filtrado. También lo puedes manejar desde el celular."
         }
       ]
     },
@@ -196,7 +196,7 @@
       "type": "instagram-feed",
       "_note": "PRUEBA SOCIAL — Posts de Instagram incrustados para generar confianza.",
       "headline": "Experiencias reales",
-      "subheadline": "Únete a las cientos de familias que ya vivieron la experiencia Calma SPA.",
+      "subheadline": "Mira lo que dicen nuestros clientes.",
       "posts": [
         "DPepr4AkZai",
         "DUojWP0EZ3f",
@@ -207,12 +207,12 @@
       "id": "contacto",
       "type": "contact-form",
       "_note": "CONTACTO — Captación de leads con validación.",
-      "headline": "Asegura tu espacio de calma.",
-      "subheadline": "Solo toma unos segundos. Elige tus fechas, ingresa tus datos esenciales y nosotros nos encargaremos de orquestar el resto. Disponibilidad limitada cada semana.",
+      "headline": "Reserva tu fecha",
+      "subheadline": "Déjanos tus datos y te confirmamos disponibilidad en menos de 1 hora. Los cupos por semana son limitados.",
       "trustBadges": [
         "Respuesta en 1 hora",
         "Instalación el día previo",
-        "Higiene Clínica Certificada"
+        "Sanitización UVC + Ozono"
       ],
       "fields": [
         {
@@ -246,11 +246,11 @@
       "id": "footer",
       "type": "footer",
       "_note": "FOOTER — Cierre estratégico con mapa y navegación.",
-      "tagline": "Elevando el bienestar en cada hogar de Santiago. Tu santuario personal está a un mensaje de distancia.",
-      "headline": "¿Listo para desconectarte?",
-      "subheadline": "Inicia tu experiencia de relajo hoy mismo.",
+      "tagline": "Spa a domicilio en toda la Región Metropolitana.",
+      "headline": "¿Te tinca?",
+      "subheadline": "Escríbenos y armamos tu spa para este finde.",
       "coverageTitle": "Cobertura Total RM",
-      "coverageSub": "Llevamos la calma a cada rincón de Santiago, de la cordillera al valle.",
+      "coverageSub": "Cobertura en todas las comunas de Santiago.",
       "social": {
         "instagram": "https://www.instagram.com/calma_spa.cl/",
         "instagramHandle": "@calma_spa.cl"
